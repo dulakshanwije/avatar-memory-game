@@ -32,8 +32,8 @@ export default function CardGrid({ setFlipCount, flipCount }) {
     { index: "8", image: image3, value: "3" },
     { index: "9", image: image4, value: "4" },
   ];
-  const [firstCard, setFirstCard] = useState("");
-  const [secondCard, setSecondCard] = useState("");
+  const [firstCard, setFirstCard] = useState({});
+  const [secondCard, setSecondCard] = useState({});
   const [clickCount, setClickCount] = useState(0);
 
   function handleFlip(id) {
@@ -43,14 +43,20 @@ export default function CardGrid({ setFlipCount, flipCount }) {
       }
       return ele;
     });
-    setFlipCount((flipCount) => flipCount + 1);
     setClickCount((clickCount) => clickCount + 1);
-    setFlip(arr_flip);
-    // if (clickCount == 1) setFirstCard("1");
-    if (clickCount >= 2) setClickCount(0);
-  }
+    setFlipCount((flipCount) => flipCount + 1);
+    if (clickCount == 1) {
+      setFirstCard(data[id]);
+      console.log("firstCard " + firstCard.value);
+    } else if (clickCount == 2) {
+      setSecondCard(data[id]);
+      console.log("secondCard " + secondCard.value);
+    } else if (clickCount > 2) {
+      setClickCount(0);
+    }
 
-  // useEffect(() => {}, [flipCount]);
+    setFlip(arr_flip);
+  }
 
   return (
     <div className={styles.container}>
