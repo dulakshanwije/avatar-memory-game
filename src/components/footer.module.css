@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.37);
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  padding: 10px 0px;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+}
+
+a {
+  color: black;
+}

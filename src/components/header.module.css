@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: auto;
+  margin-top: 30px;
+  width: 600px;
+  text-align: center;
+  color: white;
+}
+
+.title1 {
+  font-size: 3rem;
+}
+
+.title2 {
+  font-size: 2rem;
+}
+
+.icon_holder {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_img img {
+  width: 20px;
+  color: white;
+}
