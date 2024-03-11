@@ -6,6 +6,30 @@ import image3 from "../assets/images/characters/4-min.png";
 import image4 from "../assets/images/characters/5-min.png";
 import { useEffect, useState } from "react";
 import FlipCard from "./FlipCard";
+
+const data = [
+  { index: "0", image: image0, value: "0" },
+  { index: "1", image: image1, value: "1" },
+  { index: "2", image: image2, value: "2" },
+  { index: "3", image: image3, value: "3" },
+  { index: "4", image: image4, value: "4" },
+  { index: "5", image: image0, value: "0" },
+  { index: "6", image: image1, value: "1" },
+  { index: "7", image: image2, value: "2" },
+  { index: "8", image: image3, value: "3" },
+  { index: "9", image: image4, value: "4" },
+];
+
+const shuffle = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const shuffle_data = shuffle(data);
+
 export default function CardGrid({ setFlipCount, flipCount }) {
   const [flip, setFlip] = useState([
     false,
@@ -20,18 +44,6 @@ export default function CardGrid({ setFlipCount, flipCount }) {
     false,
   ]);
 
-  const data = [
-    { index: "0", image: image0, value: "0" },
-    { index: "1", image: image1, value: "1" },
-    { index: "2", image: image2, value: "2" },
-    { index: "3", image: image3, value: "3" },
-    { index: "4", image: image4, value: "4" },
-    { index: "5", image: image0, value: "0" },
-    { index: "6", image: image1, value: "1" },
-    { index: "7", image: image2, value: "2" },
-    { index: "8", image: image3, value: "3" },
-    { index: "9", image: image4, value: "4" },
-  ];
   const [firstCard, setFirstCard] = useState({});
   const [secondCard, setSecondCard] = useState({});
   const [clickCount, setClickCount] = useState(0);
@@ -61,7 +73,7 @@ export default function CardGrid({ setFlipCount, flipCount }) {
   return (
     <div className={styles.container}>
       {/* <p>{clickCount}</p> */}
-      {data.map((ele, id) => (
+      {shuffle_data.map((ele, id) => (
         <FlipCard
           image={ele.image}
           value={ele.value}
