@@ -9,16 +9,23 @@ import Footer from "./components/Footer";
 export default function App() {
   // Number of Flips
   const [flipCount, setFlipCount] = useState(0);
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(60);
 
   useEffect(() => {
     if (flipCount >= 1) {
       const interval = setInterval(() => {
-        setTime((time) => time + 1);
+        setTime((time) => time - 1);
       }, 1000);
       return () => clearInterval(interval);
     }
   }, [flipCount]);
+
+  useEffect(() => {
+    if (time == 0) {
+      alert("Hi");
+    }
+  }, [time]);
+
   return (
     <>
       <Header flips={flipCount} time={time} />
