@@ -44,7 +44,7 @@ export default function CardGrid({ setFlipCount, flipCount }) {
     false,
   ]);
 
-  // let clickCount = 0;
+  // let clickCount1 = 0;
   const [clickCount, setClickCount] = useState(1);
   // let firstCard = "";
   const [firstCard, setFirstCard] = useState("");
@@ -72,7 +72,7 @@ export default function CardGrid({ setFlipCount, flipCount }) {
     // Checking whether the click is on a already opened card
     if (!completedValues.includes(value)) {
       // clickCount++;
-      setClickCount(() => clickCount + 1);
+      setClickCount(clickCount + 1);
       console.log(clickCount);
       if (clickCount == 1) {
         // First click, value and index recorded.
@@ -125,7 +125,7 @@ export default function CardGrid({ setFlipCount, flipCount }) {
               });
               setFlip(arr);
               console.log("thisCleared");
-            }, 500);
+            }, 1000);
           }
         }
         // clickCount = 0;
