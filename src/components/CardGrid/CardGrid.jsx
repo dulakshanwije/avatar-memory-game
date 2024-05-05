@@ -7,6 +7,7 @@ import image4 from "../../assets/images/characters/5-min.png";
 import image5 from "../../assets/images/characters/8-min.png";
 import { useEffect, useState } from "react";
 import FlipCard from "../FlipCard/FlipCard";
+import PopUpBox from "../PopUpBox/PopUpBox";
 
 const data = [
   { index: "0", image: image0, value: "A", matched: false },
@@ -17,12 +18,13 @@ const data = [
   { index: "5", image: image5, value: "F", matched: false },
 ];
 
-export default function CardGrid({ setFlipCount, setScore, score }) {
+export default function CardGrid({ setFlipCount, setScore, score, setIsWon }) {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [winCount, setWinCount] = useState(0);
 
   const shuffleCards = () => {
     const shuffledCards = [...data, ...data] // 2 lots of card images
@@ -49,10 +51,19 @@ export default function CardGrid({ setFlipCount, setScore, score }) {
   }, []);
 
   useEffect(() => {
+    if (winCount === 6) {
+      console.log(winCount);
+      setIsWon(true);
+      setWinCount(0);
+    }
+  }, [winCount]);
+
+  useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.value === choiceTwo.value) {
         setScore((score) => score + 10);
+        setWinCount((winCount) => winCount + 1);
         setCards((prevCards) => {
           return prevCards.map((card) => {
             if (card.value === choiceOne.value) {
@@ -78,17 +89,20 @@ export default function CardGrid({ setFlipCount, setScore, score }) {
   };
 
   return (
-    <div className={styles.container}>
-      {cards.map((ele, id) => (
-        <FlipCard
-          image={ele.image}
-          flip={ele === choiceOne || ele === choiceTwo || ele.matched}
-          handleChoice={handleChoice}
-          card={ele}
-          key={ele.id}
-          disabled={disabled}
-        />
-      ))}
-    </div>
+    <>
+      <p>{winCount}</p>
+      <div className={styles.container}>
+        {cards.map((ele, id) => (
+          <FlipCard
+            image={ele.image}
+            flip={ele === choiceOne || ele === choiceTwo || ele.matched}
+            handleChoice={handleChoice}
+            card={ele}
+            key={ele.id}
+            disabled={disabled}
+          />
+        ))}
+      </div>
+    </>
   );
 }
