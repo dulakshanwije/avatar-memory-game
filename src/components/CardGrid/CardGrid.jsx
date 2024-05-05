@@ -1,5 +1,5 @@
 import styles from "./cardgrid.module.css";
-import episodes from "./../../assets/data/data.js";
+import episodes from "../../assets/data/episodes.js";
 import { useEffect, useState } from "react";
 import FlipCard from "../FlipCard/FlipCard";
 // import PopUpBox from "../PopUpBox/PopUpBox";
@@ -13,7 +13,6 @@ export default function CardGrid({
 }) {
   const episode_no = parseInt(episode);
   const data = episodes[episode_no];
-  console.log(data);
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);

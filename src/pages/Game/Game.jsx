@@ -18,6 +18,8 @@ export default function Game() {
   const [isWon, setIsWon] = useState(false);
   const [showWon, setShowWon] = useState(false);
 
+  const max_time = 30;
+
   useEffect(() => {
     if (!episode || !(0 <= episode && episode <= 8)) {
       navigate("/");
@@ -36,7 +38,7 @@ export default function Game() {
   useEffect(() => {
     if (time == 0) {
       setFlipCount(0);
-      setTime(30);
+      setTime(max_time);
       setIsTimeOut(true);
     }
   }, [time]);
@@ -50,7 +52,7 @@ export default function Game() {
   return (
     <>
       {/* <Home /> */}
-      <Header flips={flipCount} time={time} score={score} />
+      <Header flips={flipCount} time={time} score={score} episode={episode} />
       <CardGrid
         setFlipCount={setFlipCount}
         flipCount={flipCount}
@@ -76,7 +78,7 @@ export default function Game() {
           subtitle={"Excellent Work! Keep Up the Good Fight"}
           score={score}
           flipCount={flipCount}
-          time={30 - time}
+          time={max_time - time}
           episode={episode}
         />
       ) : (

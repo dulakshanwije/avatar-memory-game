@@ -1,9 +1,18 @@
 import styles from "./header.module.css";
-export default function Header({ time = 0, flips = 0, score = 0 }) {
+import names from "../../assets/data/names";
+export default function Header({
+  time = 0,
+  flips = 0,
+  score = 0,
+  episode = 0,
+}) {
+  const episode_no = parseInt(episode);
   return (
     <div className={styles.container}>
       <p className={styles.title1}>Avatar: The Last Airbender</p>
-      <p className={styles.title2}>Memory Game</p>
+      <p className={styles.title2}>
+        Episode {episode_no} : {names[episode_no].title}
+      </p>
       <div className={styles.icon_holder}>
         <div className={time > 10 ? styles.icon : styles.icon_red}>
           Time: {time} secs
