@@ -90,7 +90,6 @@ export default function CardGrid({ setFlipCount, setScore, score, setIsWon }) {
 
   return (
     <>
-      <p>{winCount}</p>
       <div className={styles.container}>
         {cards.map((ele, id) => (
           <FlipCard

@@ -1,5 +1,5 @@
 import styles from "./popUpBox.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function PopUpBox({
   title,
   subtitle,
@@ -28,9 +28,9 @@ export default function PopUpBox({
           >
             Play Again
           </button>
-          <Link to="/">
-            <button className={styles.button}>Main Menu</button>
-          </Link>
+          <button className={styles.button} onClick={() => navigate("/")}>
+            Main Menu
+          </button>
         </div>
       </div>
     </div>
