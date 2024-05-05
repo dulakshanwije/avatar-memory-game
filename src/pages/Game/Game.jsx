@@ -14,7 +14,7 @@ export default function Game() {
   const [flipCount, setFlipCount] = useState(0);
   const [time, setTime] = useState(30);
   const [score, setScore] = useState(0);
-  const [isTimeOut, setIsTimeOut] = useState(true);
+  const [isTimeOut, setIsTimeOut] = useState(false);
   const [isWon, setIsWon] = useState(false);
   const [showWon, setShowWon] = useState(false);
 
