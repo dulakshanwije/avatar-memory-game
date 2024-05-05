@@ -17,15 +17,10 @@ export default function PopUpBox({
         <div className={styles.info_box}>
           <p>Time: {time} secs</p>
           <p>Flips: {flipCount}</p>
-          <p>
-            Score: {score} {episode}
-          </p>
+          <p>Score: {score}</p>
         </div>
         <div className={styles.button_holder}>
-          <button
-            className={styles.button}
-            onClick={() => window.location.reload()}
-          >
+          <button className={styles.button} onClick={() => navigate(0)}>
             Play Again
           </button>
           <button className={styles.button} onClick={() => navigate("/")}>
