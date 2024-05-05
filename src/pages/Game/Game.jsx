@@ -19,7 +19,7 @@ export default function Game() {
   const [showWon, setShowWon] = useState(false);
 
   useEffect(() => {
-    if (!episode || !(0 < episode && episode < 9)) {
+    if (!episode || !(0 <= episode && episode <= 8)) {
       navigate("/");
     }
   }, []);

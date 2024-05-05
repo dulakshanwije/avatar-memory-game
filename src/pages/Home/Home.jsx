@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div>
       {/* <EpisodeCard /> */}
+      <Link to="/game/0">Characters</Link>
       <Link to="/game/1">Episode 1</Link>
       <Link to="/game/2">Episode 2</Link>
       <Link to="/game/3">Episode 3</Link>
