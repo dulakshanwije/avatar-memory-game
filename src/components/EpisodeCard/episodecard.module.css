@@ -1,0 +1,25 @@
+.episode_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  height: 600px;
+}
+
+.episode_image {
+  background-color: red;
+  height: 200px;
+  width: 50%;
+}
+
+.episode_card img {
+  width: 100%;
+}
+.episode_desc {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 200px;
+  width: 50%;
+  height: 100%;
+}

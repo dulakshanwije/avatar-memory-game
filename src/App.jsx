@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import Header from "./components/Header";
-import Card from "./components/Card";
-import CardGrid from "./components/CardGrid";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Card from "./components/Card/Card";
+import CardGrid from "./components/CardGrid/CardGrid";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
 
 export default function App() {
   // Number of Flips
   const [flipCount, setFlipCount] = useState(0);
-  const [time, setTime] = useState(60);
+  const [time, setTime] = useState(30);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     if (flipCount >= 1) {
@@ -22,14 +24,21 @@ export default function App() {
 
   useEffect(() => {
     if (time == 0) {
-      alert("Hi");
+      setFlipCount(0);
+      setTime(30);
     }
   }, [time]);
 
   return (
     <>
-      <Header flips={flipCount} time={time} />
-      <CardGrid setFlipCount={setFlipCount} flipCount={flipCount} />
+      {/* <Home /> */}
+      <Header flips={flipCount} time={time} score={score} />
+      <CardGrid
+        setFlipCount={setFlipCount}
+        flipCount={flipCount}
+        score={score}
+        setScore={setScore}
+      />
       <Footer />
     </>
   );

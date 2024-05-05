@@ -14,3 +14,17 @@
 .card_container img {
   width: 100%;
 }
+
+@media screen and (max-width: 1024px) {
+  .card_container {
+    width: 120px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .card_container {
+    width: 100px;
+    height: 125px;
+  }
+}

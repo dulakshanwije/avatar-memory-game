@@ -48,3 +48,17 @@
   width: 20px;
   color: white;
 }
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .title1 {
+    font-size: 1.5rem;
+  }
+
+  .title2 {
+    font-size: 1rem;
+  }
+}
