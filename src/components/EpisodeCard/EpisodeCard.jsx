@@ -1,10 +1,19 @@
 import styles from "./episodecard.module.css";
 import { useNavigate } from "react-router-dom";
-export default function EpisodeCard({ title, desc, link, index, image }) {
+export default function EpisodeCard({
+  title,
+  desc,
+  link,
+  index,
+  image,
+  isLeft,
+}) {
   const navigate = useNavigate();
   return (
     <div className={styles.episode_card}>
-      <div className={styles.episode_image}>
+      <div
+        className={isLeft ? styles.episode_image_left : styles.episode_image}
+      >
         <img src={image} alt="" />
       </div>
       <div className={styles.episode_desc}>
