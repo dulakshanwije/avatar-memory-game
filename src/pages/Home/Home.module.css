@@ -1,0 +1,16 @@
+.header {
+  color: #fff;
+  margin: auto;
+  text-align: center;
+}
+.title1 {
+  font-size: 3rem;
+}
+
+.title2 {
+  font-size: 2rem;
+}
+
+.episode_holder {
+  width: 100%;
+}

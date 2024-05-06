@@ -59,7 +59,7 @@ export default function Game() {
         score={score}
         setScore={setScore}
         setIsWon={setIsWon}
-        episode={episode}
+        episode={episode - 1}
       />
       {isTimeOut ? (
         <PopUpBox

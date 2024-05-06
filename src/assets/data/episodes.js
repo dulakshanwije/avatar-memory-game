@@ -54,14 +54,14 @@ import e85 from "../../assets/images/episodes/e8/e8-5.png";
 import e86 from "../../assets/images/episodes/e8/e8-6.png";
 
 const episodes = [
-  [
-    { index: "0", image: c1, value: "A", matched: false },
-    { index: "1", image: c2, value: "B", matched: false },
-    { index: "2", image: c3, value: "C", matched: false },
-    { index: "3", image: c4, value: "D", matched: false },
-    { index: "4", image: c5, value: "E", matched: false },
-    { index: "5", image: c6, value: "F", matched: false },
-  ],
+  // [
+  //   { index: "0", image: c1, value: "A", matched: false },
+  //   { index: "1", image: c2, value: "B", matched: false },
+  //   { index: "2", image: c3, value: "C", matched: false },
+  //   { index: "3", image: c4, value: "D", matched: false },
+  //   { index: "4", image: c5, value: "E", matched: false },
+  //   { index: "5", image: c6, value: "F", matched: false },
+  // ],
   [
     { index: "0", image: e11, value: "A", matched: false },
     { index: "1", image: e12, value: "B", matched: false },
